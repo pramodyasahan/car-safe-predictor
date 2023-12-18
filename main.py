@@ -13,3 +13,6 @@ y = dataset.iloc[:, -1].values
 
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0, 1, 4])], remainder='passthrough')
 X = np.array(ct.fit_transform(X))
+
+le = LabelEncoder()
+y = le.fit_transform(y)
